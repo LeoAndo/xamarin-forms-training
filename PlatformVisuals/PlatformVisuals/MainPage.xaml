@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlatformVisuals.MainPage"
+             Title="Visulals">
+
+    <StackLayout Padding="10,0,10,10">
+        <Label Text="Hello, Xamarin.Forms!"
+               FontSize="Large"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"/>
+        <Button Text="Click Me!"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"/>
+        <Switch VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"/>
+        <Slider VerticalOptions="CenterAndExpand"/>
+        <Image Source="outline_work_outline_black_24.png" WidthRequest="24" HeightRequest="24"/>
+    </StackLayout>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="work" Order="Primary">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="outline_work_outline_black_24pt_1x.png" />
+                    <On Platform="Android" Value="outline_work_outline_black_24.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="pan" Order="Primary">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="outline_pan_tool_black_24pt_1x.png" />
+                    <On Platform="Android" Value="outline_pan_tool_black_24.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="explore" Order="Secondary" />
+        <ToolbarItem Text="discover" Order="Secondary" />
+        <ToolbarItem Text="evolve" Order="Secondary" />
+    </ContentPage.ToolbarItems>
+</ContentPage>
