@@ -9,8 +9,7 @@ namespace Greetings
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new Greetings();
         }
 
         protected override void OnStart()
