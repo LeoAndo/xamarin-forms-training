@@ -16,6 +16,10 @@
                 HorizontalOptions="CenterAndExpand"
                 IsEnabled="False"
                 Clicked="OnButtonClicked"/>
+            <Button
+                x:Name="lambdaHandlerButton"
+                Text="lambda Sample"
+                HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
         <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand">
 

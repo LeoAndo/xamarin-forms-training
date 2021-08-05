@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,11 @@ namespace ButtonClickedSample
             InitializeComponent();
             scrollView.Content = loggerlayout;
             this.Padding = new Thickness(0, (Device.RuntimePlatform == Device.iOS) ? 46 : 12, 0, 0);
+
+            lambdaHandlerButton.Clicked += (sender, args) =>
+            {
+                Debug.WriteLine("lambdaHandlerButton#Clicked");
+            };
         }
 
         void OnButtonClicked(System.Object sender, System.EventArgs e)
