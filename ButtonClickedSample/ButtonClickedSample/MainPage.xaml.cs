@@ -14,7 +14,8 @@ namespace ButtonClickedSample
         public MainPage()
         {
             InitializeComponent();
-            //scrollView.Content = loggerlayout;
+            scrollView.Content = loggerlayout;
+            this.Padding = new Thickness(0, (Device.RuntimePlatform == Device.iOS) ? 46 : 12, 0, 0);
         }
 
         void OnButtonClicked(System.Object sender, System.EventArgs e)
