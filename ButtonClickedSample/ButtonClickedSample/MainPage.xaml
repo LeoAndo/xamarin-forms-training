@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ButtonClickedSample.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <Button
+                x:Name="addButton"
+                Text="Add"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="OnButtonClicked"/>
+            <Button
+                x:Name="removeButton"
+                Text="Remove"
+                HorizontalOptions="CenterAndExpand"
+                IsEnabled="False"
+                Clicked="OnButtonClicked"/>
+        </StackLayout>
+        <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand">
+
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>
