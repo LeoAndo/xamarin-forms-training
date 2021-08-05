@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,13 @@ namespace TimerSample
         public MainPage()
         {
             InitializeComponent();
+
+            // event hook: page size changed.
+            SizeChanged += (object sender, EventArgs e) =>
+            {
+                Debug.WriteLine("Width: " + this.Width + " Hight: " + this.Height);
+            };
+
             // Start the timer going.
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
