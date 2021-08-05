@@ -10,9 +10,17 @@ namespace TimerSample
 {
     public partial class MainPage : ContentPage
     {
+        // constructor
         public MainPage()
         {
             InitializeComponent();
+            // Start the timer going.
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                // Set the Tex property of the Label.
+                clock.Text = DateTime.Now.ToString("HH:mm:ss");
+                return true; // runs again, or false to stop
+            });
         }
     }
 }
