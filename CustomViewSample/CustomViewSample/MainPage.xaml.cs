@@ -13,6 +13,8 @@ namespace CustomViewSample
         public MainPage()
         {
             InitializeComponent();
+            int verticalSize = (Device.RuntimePlatform == Device.iOS) ? 36 : 12;
+            this.Padding = new Thickness(0, verticalSize);
         }
     }
 }
