@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace DependencyServiceSample
 {
@@ -13,6 +7,9 @@ namespace DependencyServiceSample
         public MainPage()
         {
             InitializeComponent();
+            IPlatformInfo platformInfo = DependencyService.Get<IPlatformInfo>();
+            modelLabel.Text = platformInfo.GetModel();
+            versionLabel.Text = platformInfo.GetVersion();
         }
     }
 }
