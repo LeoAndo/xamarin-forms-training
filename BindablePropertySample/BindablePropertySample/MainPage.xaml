@@ -1,24 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BindablePropertySample"
              x:Class="BindablePropertySample.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <local:CountedLabel
+            x:Name="countedLabel"
+            Text="Mr. Sherlock Holmes, who was usually very late in
+the mornings, save upon those not infrequent
+occasions when he was up all night, was seated at
+the breakfast table. I stood upon the hearth-rug
+and picked up the stick which our visitor had left
+behind him the night before. It was a fine, thick
+piece of wood, bulbous-headed, of the sort which
+is known as a &#x201C;Penang lawyer.&#x201D; Just
+under the head was a broad silver band, nearly an
+inch across, &#x201C;To James Mortimer, M.R.C.S.,
+from his friends of the C.C.H.,&#x201D; was engraved
+upon it, with the date &#x201C;1884.&#x201D; It was
+just such a stick as the old-fashioned family
+practitioner used to carry&#x2014;dignified, solid,
+and reassuring."
+            />
+        <Label
+            x:Name="wordCountLabel"
+            Text=""
+            HorizontalOptions="CenterAndExpand"
+            FontSize="Large"/>
     </StackLayout>
 
 </ContentPage>

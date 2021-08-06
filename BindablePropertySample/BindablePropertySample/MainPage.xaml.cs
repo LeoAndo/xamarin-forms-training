@@ -13,6 +13,8 @@ namespace BindablePropertySample
         public MainPage()
         {
             InitializeComponent();
+            int wordcount = countedLabel.WordCount;
+            wordCountLabel.Text = wordcount + " words";
         }
     }
 }
