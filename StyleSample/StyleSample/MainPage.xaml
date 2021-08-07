@@ -5,22 +5,26 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="layoutStyle" TargetType="StackLayout">
+            <Style TargetType="StackLayout">
                 <Setter Property="Padding" Value="36"/>
             </Style>
 
-            <Style x:Key="viewStyle" TargetType="View">
+            <Style TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Fill"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="BackgroundColor" Value="Chocolate" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="BackgroundColor" Value="Chocolate" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout Style="{StaticResource layoutStyle}">
-        <Button x:Name="button1" Style="{StaticResource viewStyle}" BackgroundColor="AliceBlue" Text="btn1"/>
-        <Button x:Name="button2" Style="{StaticResource viewStyle}" Text="btn2"/>
-        <Button x:Name="button3" Style="{StaticResource viewStyle}" Text="btn3"/>
-        <Label x:Name="label1" Style="{StaticResource viewStyle}" Text="lbl1" HorizontalTextAlignment="Center"/>
+    <StackLayout>
+        <Button x:Name="button1" BackgroundColor="AliceBlue" Text="btn1"/>
+        <Button x:Name="button2"  Text="btn2"/>
+        <Button x:Name="button3"  Text="btn3"/>
+        <Label x:Name="label1"  Text="lbl1"/>
     </StackLayout>
 </ContentPage>
