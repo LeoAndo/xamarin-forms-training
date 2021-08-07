@@ -9,18 +9,18 @@
                 <Setter Property="Padding" Value="36"/>
             </Style>
 
-            <Style x:Key="buttonStyle" TargetType="Button">
+            <Style x:Key="viewStyle" TargetType="View">
                 <Setter Property="HorizontalOptions" Value="Fill"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="Text" Value="set Style text.."/>
                 <Setter Property="BackgroundColor" Value="Chocolate" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <StackLayout Style="{StaticResource layoutStyle}">
-        <Button x:Name="button1" Style="{StaticResource buttonStyle}" Text="override text."/>
-        <Button x:Name="button2" Style="{StaticResource buttonStyle}"/>
-        <Button x:Name="button3" Style="{StaticResource buttonStyle}"/>
+        <Button x:Name="button1" Style="{StaticResource viewStyle}" BackgroundColor="AliceBlue" Text="btn1"/>
+        <Button x:Name="button2" Style="{StaticResource viewStyle}" Text="btn2"/>
+        <Button x:Name="button3" Style="{StaticResource viewStyle}" Text="btn3"/>
+        <Label x:Name="label1" Style="{StaticResource viewStyle}" Text="lbl1" HorizontalTextAlignment="Center"/>
     </StackLayout>
 </ContentPage>
