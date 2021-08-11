@@ -16,7 +16,7 @@ namespace BitmapSample
         void renderSize_SizeChanged(System.Object sender, System.EventArgs e)
         {
             Image image = (Image)sender;
-            renderSize.Text = String.Format("Render size = {0:F0} x {1:F0}", image.Width, image.Height);
+            renderSize.Text = String.Format("Pokemon Image Render size = {0:F0} x {1:F0}", image.Width, image.Height);
         }
     }
 }

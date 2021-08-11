@@ -5,7 +5,7 @@
     <ScrollView>
         <StackLayout Padding="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <Label Text="sample for bitmap FromResource" Style="{DynamicResource TitleStyle}"/>
-            <Label x:Name="Pokemon Image renderSize" />
+            <Label x:Name="renderSize" />
             <Image x:Name="imagePokemon" SizeChanged="renderSize_SizeChanged" />
         </StackLayout>
     </ScrollView>
