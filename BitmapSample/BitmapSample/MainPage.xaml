@@ -2,11 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BitmapSample.MainPage">
-
-    <StackLayout Padding="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-        <Label Text="sample for bitmap FromUri" Style="{DynamicResource TitleStyle}"/>
-        <Image Source="https://assets.pokemon.com/assets/cms2/img/pokedex/full/500.png" />
-        <Image Source="https://source.unsplash.com/random/400x400"/>
-    </StackLayout>
-
+    <ScrollView>
+        <StackLayout Padding="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Label Text="sample for bitmap FromUri" Style="{DynamicResource TitleStyle}"/>
+            <Image Source="https://assets.pokemon.com/assets/cms2/img/pokedex/full/500.png" IsVisible="False"/>
+            <Label Text="Aspect Default (AspectFit)" Style="{DynamicResource SubtitleStyle}"/>
+            <Image Source="https://source.unsplash.com/random/400x400" BackgroundColor="Aqua"/>
+            <Label Text="AspectFit" Style="{DynamicResource SubtitleStyle}"/>
+            <Image Source="https://source.unsplash.com/random/400x400" BackgroundColor="Aqua" Aspect="AspectFit"/>
+            <Label Text="Fill" Style="{DynamicResource SubtitleStyle}"/>
+            <Image Source="https://source.unsplash.com/random/400x400" BackgroundColor="Aqua" Aspect="Fill"/>
+            <Label Text="AspectFill" Style="{DynamicResource SubtitleStyle}"/>
+            <Image Source="https://source.unsplash.com/random/400x400" BackgroundColor="Aqua" Aspect="AspectFill"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
