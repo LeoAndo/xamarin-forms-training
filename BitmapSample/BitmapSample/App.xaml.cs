@@ -10,7 +10,8 @@ namespace BitmapSample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // MainPage = new MainPage();
+            MainPage = new ImageResourcePage();
         }
 
         protected override void OnStart()
