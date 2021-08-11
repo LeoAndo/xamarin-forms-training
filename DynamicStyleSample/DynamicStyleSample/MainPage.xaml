@@ -30,6 +30,12 @@
                 <Setter Property="TextColor" Value="Brown"/>
                 <Setter Property="Text" Value="buttonStyle"/>
             </Style>
+
+            <!-- extends Device styles .-->
+            <Style x:Key="myListItemDetailTextStyle" TargetType="Label" BaseResourceKey="ListItemDetailTextStyleKey">
+                <Setter Property="TextColor" Value="CadetBlue"/>
+            </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -41,6 +47,18 @@
         <Button Style="{DynamicResource buttonStyle}" Clicked="Button_Clicked_1"/>
         <Button Style="{DynamicResource buttonStyle}" Clicked="Button_Clicked_2"/>
         <Button Style="{DynamicResource buttonStyle}" Clicked="OnResetStyleAction" />
+
+        <!-- TitleStyle SubtitleStyle BodyStyle CaptionStyle ListItemTextStyle ListItemDetailTextStyle-->
+
+        <Label Style="{DynamicResource TitleStyle}" Text="Device Styles" />
+        <Label Style="{DynamicResource TitleStyle}" Text="TitleStyle" />
+        <Label Style="{DynamicResource SubtitleStyle}" Text="SubtitleStyle" />
+        <Label Style="{DynamicResource BodyStyle}" Text="BodyStyle" />
+
+        <Label Style="{DynamicResource CaptionStyle}" Text="CaptionStyle" />
+        <Label Style="{DynamicResource ListItemTextStyle}" Text="ListItemTextStyle" />
+        <Label Style="{DynamicResource ListItemDetailTextStyle}" Text="ListItemDetailTextStyle" />
+        <Label Style="{DynamicResource myListItemDetailTextStyle}" Text="myListItemDetailTextStyle" />
     </StackLayout>
 
 </ContentPage>
