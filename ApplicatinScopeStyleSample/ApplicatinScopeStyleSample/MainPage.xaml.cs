@@ -13,6 +13,8 @@ namespace ApplicatinScopeStyleSample
         public MainPage()
         {
             InitializeComponent();
+            int verticalSize = (Device.RuntimePlatform == Device.iOS) ? 32 : 0;
+            this.Padding = new Thickness(0, verticalSize);
         }
     }
 }
