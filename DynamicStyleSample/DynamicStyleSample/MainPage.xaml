@@ -3,22 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DynamicStyleSample.MainPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="Aqua"/>
+                <Setter Property="Text" Value="Switched baseButtonStyle"/>
+            </Style>
+
+            <Style x:Key="buttonStyle1" TargetType="Button" BasedOn="{StaticResource baseButtonStyle}">
+                <Setter Property="TextColor" Value="Green"/>
+                <Setter Property="Text" Value="Switched buttonStyle1"/>
+            </Style>
+
+            <Style x:Key="buttonStyle2" TargetType="Button" BasedOn="{StaticResource baseButtonStyle}">
+                <Setter Property="TextColor" Value="OrangeRed"/>
+                <Setter Property="Text" Value="Switched buttonStyle2"/>
+            </Style>
+
+            <Style x:Key="buttonStyle3" TargetType="Button" BasedOn="{StaticResource baseButtonStyle}">
+                <Setter Property="TextColor" Value="Purple"/>
+                <Setter Property="Text" Value="Switched buttonStyle3"/>
+            </Style>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="Brown"/>
+                <Setter Property="Text" Value="buttonStyle"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <!-- 未定義のStyle (DynamicResource undefinedButtonStyle) を指定しているので、見つからずにXamarinのデフォルトのStyleが適用される。(Exceptionは発生しない) -->
+        <Button Style="{DynamicResource undefinedButtonStyle}" Clicked="Button_Clicked"/>
+
+        <Button Style="{DynamicResource buttonStyle}" Clicked="Button_Clicked_1"/>
+        <Button Style="{DynamicResource buttonStyle}" Clicked="Button_Clicked_2"/>
+        <Button Style="{DynamicResource buttonStyle}" Clicked="OnResetStyleAction" />
     </StackLayout>
 
 </ContentPage>
