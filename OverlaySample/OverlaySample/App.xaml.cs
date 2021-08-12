@@ -10,7 +10,8 @@ namespace OverlaySample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // MainPage = new MainPage();
+            MainPage = new ActivityIndicatorSamplePage();
         }
 
         protected override void OnStart()
