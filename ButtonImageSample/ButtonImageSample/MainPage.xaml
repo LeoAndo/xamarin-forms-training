@@ -11,6 +11,13 @@
                             iOS="ic_action_good.png" Android="ic_action_good.png" />
             </Button.ImageSource>
         </Button>
+
+         <Button Text="Bad">
+            <Button.ImageSource>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_action_bad.png" Android="ic_action_bad.png" />
+            </Button.ImageSource>
+        </Button>
     </StackLayout>
 
 </ContentPage>
