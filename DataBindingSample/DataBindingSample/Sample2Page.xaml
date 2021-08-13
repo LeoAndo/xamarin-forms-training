@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBindingSample.Sample2Page">
+    <!--Xamlでdatabinding定義を行うサンプル-->
+    <StackLayout
+        Padding="40"
+        VerticalOptions="CenterAndExpand">
+        <Label
+            x:Name="label"
+            Text="Opacity Binding Demo"
+            HorizontalOptions="Center"
+            Style="{DynamicResource TitleStyle}"
+            BindingContext="{x:Reference Name=slider}"
+            Opacity="{Binding Path=Value}"/>
+        <Slider x:Name="slider"/>
+    </StackLayout>
+
+</ContentPage>
