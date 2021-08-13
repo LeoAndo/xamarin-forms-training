@@ -13,6 +13,11 @@ namespace DataBindingSample
         public MainPage()
         {
             InitializeComponent();
+
+            // Set the binding context: target is Label; source is Slider.
+            label.BindingContext = slider;
+            // Bind the properties: target is Opacity; source is Value.
+            label.SetBinding(Label.OpacityProperty, "Value");
         }
     }
 }
