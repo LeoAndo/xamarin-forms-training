@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace OverlaySample
 {
-    public partial class MainPage : ContentPage
+    public partial class ActivityIndicatorSamplePage : ContentPage
     {
-        public MainPage()
+        public ActivityIndicatorSamplePage()
         {
             InitializeComponent();
         }
 
-        // ProgressBarのPropertyに0-1の値を設定することができる。0-100ではないので注意！
         void OnButtonClicked(object sender, EventArgs args)
         {
-            // Show overlay with ProgressBar.
+            // Show overlay with ActivityIndicator.
             overlay.IsVisible = true;
+            indicator.IsRunning = overlay.IsVisible;
 
-            TimeSpan duration = TimeSpan.FromSeconds(5);
+            TimeSpan duration = TimeSpan.FromSeconds(3);
             DateTime startTime = DateTime.Now;
 
             // Start timer. 0.1秒間隔で定期処理を行う
@@ -29,7 +26,6 @@ namespace OverlaySample
             {
                 double progress = (DateTime.Now - startTime).TotalMilliseconds /
                                   duration.TotalMilliseconds;
-                progressBar.Progress = progress;
                 bool continueTimer = progress < 1;
 
                 if (!continueTimer)
