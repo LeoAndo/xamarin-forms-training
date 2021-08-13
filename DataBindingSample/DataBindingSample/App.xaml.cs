@@ -10,7 +10,8 @@ namespace DataBindingSample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // MainPage = new MainPage();
+            MainPage = new Sample2Page();
         }
 
         protected override void OnStart()
