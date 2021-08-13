@@ -11,8 +11,8 @@
             Text="Opacity Binding Demo"
             HorizontalOptions="Center"
             Style="{DynamicResource TitleStyle}"
-            BindingContext="{x:Reference Name=slider}"
-            Opacity="{Binding Path=Value}"/>
+            BindingContext="{x:Reference slider}"
+            Opacity="{Binding Value}"/>
         <Slider x:Name="slider"/>
     </StackLayout>
 
