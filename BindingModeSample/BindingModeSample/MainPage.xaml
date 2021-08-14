@@ -3,22 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BindingModeSample.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Slider">
+                <Setter Property="Margin" Value="0,0,0,20" />
+                <Setter Property="Maximum" Value="50"/>
+                <Setter Property="Minimum" Value="1"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="CenterAndExpand">
+        <Label x:Name="label1" Text="Default" 
+                   FontSize="{Binding Source={x:Reference slider1},
+                                      Path=Value}" />
+        <Slider x:Name="slider1"/>
+
+        <Label x:Name="label2" Text="OneWay" 
+                   FontSize="{Binding Source={x:Reference slider2},
+                                      Path=Value,
+                                      Mode=OneWay}" />
+        <Slider x:Name="slider2"/>
+
+        <Label x:Name="label3" Text="OneWayToSource" 
+                   FontSize="{Binding Source={x:Reference slider3},
+                                      Path=Value,
+                                      Mode=OneWayToSource}" />
+        <Slider x:Name="slider3"/>
+
+
+        <Label x:Name="label4" Text="TwoWay"
+                   FontSize="{Binding Source={x:Reference slider4},
+                                      Path=Value,
+                                      Mode=TwoWay}" />
+        <Slider x:Name="slider4"/>
+
+        <Button Clicked="Button_Clicked" Text="Change All FontSize"/>
     </StackLayout>
 
 </ContentPage>
