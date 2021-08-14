@@ -14,5 +14,21 @@ namespace WebViewSample
         {
             InitializeComponent();
         }
+
+        void OnEntryCompleted(System.Object sender, System.EventArgs e)
+        {
+            Entry entry = (Entry)sender;
+            webView.Source = entry.Text;
+        }
+
+        void OnGoBackClicked(System.Object sender, System.EventArgs e)
+        {
+            webView.GoBack();
+        }
+
+        void OnGoForwardClicked(System.Object sender, System.EventArgs e)
+        {
+            webView.GoForward();
+        }
     }
 }
