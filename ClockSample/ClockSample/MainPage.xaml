@@ -5,39 +5,26 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:ClockSample">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:DateTimeViewModel x:Key="viewModel" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <StackLayout.BindingContext>
+            <Binding Path="DateTime">
+                <Binding.Source>
+                    <local:DateTimeViewModel/>
+                </Binding.Source>
+            </Binding>
+        </StackLayout.BindingContext>
+
         <Label
             Text="{
             Binding Source={x:Static sys:DateTime.Now},
             StringFormat='launch app date at {0:F}' }"/>
-        <Label
-            Text="{
-            Binding Source={x:StaticResource viewModel},
-            Path=DateTime.Hour,
-            StringFormat='hour is {0}' } "/>
 
-        <Label
-            Text="{
-            Binding Source={x:StaticResource viewModel},
-            Path=DateTime.Minute,
-            StringFormat='minute is {0}' } "/>
+        <Label Text="{Binding Hour,   StringFormat='hour is {0}' } "/>
 
-        <Label
-            Text="{
-            Binding Source={x:StaticResource viewModel},
-            Path=DateTime.Second,
-            StringFormat='second is {0}' } "/>
+        <Label Text="{Binding Minute, StringFormat='minute is {0}' } "/>
 
-        <Label
-            Text="{
-            Binding Source={x:StaticResource viewModel},
-            Path=DateTime.Millisecond,
-            StringFormat='millisecond is {0}' } "/>
+        <Label Text="{Binding Second, StringFormat='second is {0}' } "/>
+
+        <Label Text="{Binding Millisecond, StringFormat='millisecond is {0}' } "/>
     </StackLayout>
 </ContentPage>
