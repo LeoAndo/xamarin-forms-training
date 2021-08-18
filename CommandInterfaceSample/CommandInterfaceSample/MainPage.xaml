@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CommandInterfaceSample"
+             x:Class="CommandInterfaceSample.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:PowersViewModel x:Key="viewModel">
+                <x:Arguments>
+                    <x:Double>3</x:Double>
+                </x:Arguments>
+            </local:PowersViewModel>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BindingContext="{StaticResource viewModel}" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label x:Name="base" FontSize="Large" Text="{Binding BaseValue, StringFormat='{0}'}"/>
+            <Label x:Name="exponent" FontSize="Small" Text="{Binding Exponent, StringFormat='{0}'}"/>
+            <Label x:Name="power" FontSize="Large" Text="{Binding Power, StringFormat=' = {0}'}"/>
+        </StackLayout>
+        <Button x:Name="increase" Text="increate"  Command="{Binding IncreaseExponentCommand}"/>
+        <Button x:Name="decrease" Text="decrease"  Command="{Binding DecreaseExponentCommand}"/>
+    </StackLayout>
+
+</ContentPage>
