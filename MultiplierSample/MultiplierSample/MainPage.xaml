@@ -14,7 +14,7 @@
 
         <StackLayout VerticalOptions="CenterAndExpand">
             <Slider Value="{Binding Multiplicand}" />
-            <Stepper Value="{Binding Multiplier}" />
+            <Entry Text ="{Binding Multiplier}" Keyboard="Numeric" />
         </StackLayout>
 
         <StackLayout Orientation="Horizontal"
