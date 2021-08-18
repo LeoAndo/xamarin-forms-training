@@ -6,7 +6,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:MultiplierViewModel x:Key="viewModel" />
+            <local:MultiplierViewModel x:Key="viewModel" Multiplicand="0.5" Multiplier="0.3" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
