@@ -17,6 +17,7 @@
                 <x:String>Text</x:String>
                 <x:String>Url</x:String>
             </Picker.Items>
+            <Picker.SelectedIndex>3</Picker.SelectedIndex>
         </Picker>
     </StackLayout>
 
