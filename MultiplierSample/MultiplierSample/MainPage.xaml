@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultiplierSample.MainPage"
+             xmlns:local="clr-namespace:MultiplierSample">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MultiplierViewModel x:Key="viewModel" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BindingContext="{x:StaticResource viewModel}">
+
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Slider Value="{Binding Multiplicand}" />
+            <Slider Value="{Binding Multiplier}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="Center">
+            <Label Text="{Binding Multiplicand, StringFormat='{0:F3}'}" />
+            <Label Text="{Binding Multiplier, StringFormat=' x {0:F3}'}" />
+            <Label Text="{Binding Product, StringFormat=' = {0:F3}'}" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
