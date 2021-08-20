@@ -10,7 +10,8 @@ namespace ListViewSample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // MainPage = new MainPage();
+            MainPage = new TextCellListSamplePage();
         }
 
         protected override void OnStart()
