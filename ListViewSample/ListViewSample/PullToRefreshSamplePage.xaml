@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ListViewSample"
+    x:Class="ListViewSample.PullToRefreshSamplePage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RssFeedViewModel x:Key="rssFeed"
+                    Url="https://earthobservatory.nasa.gov/feeds/image-of-the-day.rss" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <StackLayout x:Name="rssLayout"
+                     BindingContext="{StaticResource rssFeed}">
+
+            <Label Text="{Binding Title}"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <ListView x:Name="listView" 
+                      ItemsSource="{Binding Items}"
+                      ItemSelected="OnListViewItemSelected"
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsRefreshing="{Binding IsRefreshing}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Title}"
+                                   Detail="{Binding PubDate}"
+                                   ImageSource="{Binding Thumbnail}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout x:Name="webLayout"
+                     IsVisible="False">
+
+            <WebView x:Name="webView"  
+                     VerticalOptions="FillAndExpand" />
+
+            <Button Text="&lt; Back to List"
+                    HorizontalOptions="Center"
+                    Clicked="OnBackButtonClicked" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

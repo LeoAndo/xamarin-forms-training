@@ -12,7 +12,8 @@ namespace ListViewSample
 
             // MainPage = new MainPage();
             // MainPage = new TextCellListSamplePage();
-            MainPage = new ViewCellSamplePage();
+            // MainPage = new ViewCellSamplePage();
+            MainPage = new PullToRefreshSamplePage();
         }
 
         protected override void OnStart()
