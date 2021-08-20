@@ -1,24 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TableViewSample"
              x:Class="TableViewSample.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <TableView x:Name="tableView"
+                   Intent="Form">
+
+            <TableView.BindingContext>
+                <local:PersonalInformation />
+            </TableView.BindingContext>
+
+            <TableRoot Title="Data Form">
+                <TableSection Title="Personal Information">
+                    <EntryCell Label="Name:"
+                               Text="{Binding Name}"
+                               Placeholder="Enter name"
+                               Keyboard="Text" />
+
+                    <EntryCell Label="Email:"
+                               Text="{Binding EmailAddress}"
+                               Placeholder="Enter email address"
+                               Keyboard="Email" />
+
+                    <EntryCell Label="Phone:"
+                               Text="{Binding PhoneNumber}"
+                               Placeholder="Enter phone number"
+                               Keyboard="Telephone" />
+
+                    <EntryCell Label="Age:"
+                               Text="{Binding Age}"
+                               Placeholder="Enter age"
+                               Keyboard="Numeric" />
+
+                    <SwitchCell Text="Are you a programmer?"
+                                On="{Binding IsProgrammer}" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Label x:Name="summaryLabel"
+               VerticalOptions="CenterAndExpand" />
+
+        <Button Text="Submit"
+                HorizontalOptions="Center"
+                Clicked="OnSubmitButtonClicked" />
     </StackLayout>
 
 </ContentPage>
