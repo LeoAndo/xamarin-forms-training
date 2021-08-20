@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -18,17 +17,18 @@ namespace ListViewSample
         {
             if (args.SelectedItem != null)
             {
-                // Deselect item.
+                // セルの選択の解除
                 ((ListView)sender).SelectedItem = null;
 
-                // Set WebView source to RSS item
+                // WebView source として RSS itemを設定
                 RssItemViewModel rssItem = (RssItemViewModel)args.SelectedItem;
 
-                // For iOS 9, a NSAppTransportSecurity key was added to 
-                //  Info.plist to allow accesses to EarthObservatory.nasa.gov sites.
+                // ForiOS 9
+                // EarthObservatory.nasa.gov サイトにアクセスするための
+                // NSAppTransportSecurity key がInfo.plistに追加されている
                 webView.Source = rssItem.Link;
 
-                // Hide and make visible.
+                // 表示の切り替え(WebView表示)
                 rssLayout.IsVisible = false;
                 webLayout.IsVisible = true;
             }
@@ -36,7 +36,7 @@ namespace ListViewSample
 
         void OnBackButtonClicked(object sender, EventArgs args)
         {
-            // Hide and make visible.
+            // 表示の切り替え(Rssの表示)
             webLayout.IsVisible = false;
             rssLayout.IsVisible = true;
         }

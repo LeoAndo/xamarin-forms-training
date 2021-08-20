@@ -1,22 +1,19 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace ListViewSample
 {
+    // リストのセルに表示するデータを扱うクラス
     public class RssItemViewModel
     {
         public RssItemViewModel(XElement element)
         {
-            // Although this code might appear to be generalized, it is
-            //  actually based on desired elements from the particular 
-            //  RSS feed set in the RssFeedPage.xaml file.
             Title = element.Element(XName.Get("title")).Value;
             Description = element.Element(XName.Get("description")).Value;
             Link = element.Element(XName.Get("link")).Value;
             PubDate = element.Element(XName.Get("pubDate")).Value;
 
-            // Sometimes there's no thumbnail, so check for its presence.
+            // thumbnailが存在しないこともあるので、nullチェックをすること！
             XElement thumbnailElement = element.Element(
                 XName.Get("thumbnail", "http://search.yahoo.com/mrss/"));
 
