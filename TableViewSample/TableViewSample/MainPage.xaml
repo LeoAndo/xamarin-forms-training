@@ -9,7 +9,12 @@
                    Intent="Form">
 
             <TableView.BindingContext>
-                <local:PersonalInformation />
+                <local:PersonalInformation
+                    Name="Leo"
+                    EmailAddress="foo@gmail.com"
+                    PhoneNumber="09012345678"
+                    Age="20"
+                    IsProgrammer="True"/>
             </TableView.BindingContext>
 
             <TableRoot Title="Data Form">
