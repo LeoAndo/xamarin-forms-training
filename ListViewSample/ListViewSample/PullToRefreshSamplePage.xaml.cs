@@ -10,6 +10,8 @@ namespace ListViewSample
         public PullToRefreshSamplePage()
         {
             InitializeComponent();
+            int verticalSize = (Device.RuntimePlatform == Device.iOS) ? 60 : 20;
+            Padding = new Thickness(0, verticalSize);
         }
 
         void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
