@@ -6,7 +6,7 @@
     x:Class="ListViewSample.ViewCellSamplePage">
 
     <ListView SeparatorVisibility="None"
-              ItemsSource="{x:Static local:NamedColor.All}" RowHeight="80">
+              ItemsSource="{x:Static local:NamedColor.All}" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
