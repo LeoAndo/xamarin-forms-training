@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -18,14 +19,16 @@ namespace ListViewSample
         public RssFeedViewModel()
         {
             // 通信処理
+            // 
             RefreshCommand = new Command(
                 execute: () =>
                 {
+                    Debug.WriteLine("RefreshCommand#execute");
                     LoadRssFeed(url);
                 },
                 canExecute: () =>
                 {
-                    // executeメソッドの実行フラグを返す
+                    // executeメソッドの終了条件: IsRefreshingにfalseが設定された時
                     return !IsRefreshing;
                 });
         }
@@ -36,6 +39,7 @@ namespace ListViewSample
             {
                 if (SetProperty(ref url, value) && !String.IsNullOrEmpty(url))
                 {
+                    Debug.WriteLine("Url#set");
                     LoadRssFeed(url);
                 }
             }
