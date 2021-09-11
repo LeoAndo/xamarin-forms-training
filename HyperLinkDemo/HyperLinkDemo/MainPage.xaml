@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HyperLinkDemo.MainPage"
+             xmlns:local="clr-namespace:HyperLinkDemo">
+
+    <StackLayout HorizontalOptions="Center">
+        <local:HyperlinkLabel Text="AppCenter documentation"
+                              Url="https://docs.microsoft.com/appcenter/"
+                               />
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Alternatively, click " />
+                    <local:HyperlinkSpan Text="here"
+                                         Url="https://docs.microsoft.com/appcenter/" />
+                    <Span Text=" to view AppCenter documentation." />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
