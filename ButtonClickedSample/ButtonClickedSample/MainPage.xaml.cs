@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace ButtonClickedSample
@@ -33,9 +28,13 @@ namespace ButtonClickedSample
                 label.Text = "Button clicked at " + DateTime.Now.ToString("HH:mm:ss");
                 loggerlayout.Children.Add(label);
             }
-            else
+            else if (button == removeButton)
             {
                 loggerlayout.Children.RemoveAt(0);
+            }
+            else if (button == removeEventButton)
+            {
+                addButton.Clicked -= OnButtonClicked;
             }
 
             removeButton.IsEnabled = loggerlayout.Children.Count > 0;

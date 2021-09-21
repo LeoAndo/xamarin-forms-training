@@ -20,6 +20,11 @@
                 x:Name="lambdaHandlerButton"
                 Text="lambda Sample"
                 HorizontalOptions="CenterAndExpand"/>
+            <Button
+                x:Name="removeEventButton"
+                Clicked="OnButtonClicked"
+                Text="Remove addButton Click Event"
+                HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
         <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand">
 
