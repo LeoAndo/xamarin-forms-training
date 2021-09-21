@@ -9,6 +9,8 @@ namespace HelloXamarinAndroid
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        // Override指定がJavaではアノテーション(@Override)だが、C#ではoverride構文を指定する
+        // 継承元のメソッドを呼び出すためにsuperではなく、baseを使う
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
