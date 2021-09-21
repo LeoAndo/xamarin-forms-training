@@ -8,7 +8,7 @@ Visual Studio Community 2019 for Mac
 Version 8.10.7 (build 17)
 ```
 ```
-XCode Version 13.0
+XCode Version 12.5.1
 ```
 
 # development memo
