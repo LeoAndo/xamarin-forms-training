@@ -19,6 +19,8 @@ namespace ButtonClickedSample
             };
         }
 
+        // object senderにはイベント発行元であるオブジェクトが渡ってくる。今回の場合、Button
+        // EventArgs e には、イベントに関する追加情報がわたってくる。
         void OnButtonClicked(System.Object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
