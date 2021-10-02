@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SharedTransitionSample.DetailsPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="50" VerticalOptions="CenterAndExpand">
+            <Image x:Name="color"
+                   HeightRequest="250"
+                   sharedTransitions:Transition.Name="shareditemTransition"/>
+            <Label x:Name="colorName"
+                   FontSize="50"
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
