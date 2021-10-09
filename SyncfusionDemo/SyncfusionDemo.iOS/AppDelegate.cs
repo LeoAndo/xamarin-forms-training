@@ -24,6 +24,8 @@ namespace SyncfusionDemo.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            Syncfusion.XForms.iOS.Border.SfBorderRenderer.Init(); // Use Syncfusion.Xamarin.Buttons
+            Syncfusion.XForms.iOS.Buttons.SfButtonRenderer.Init(); // Use Syncfusion.Xamarin.Buttons
 
             return base.FinishedLaunching(app, options);
         }
