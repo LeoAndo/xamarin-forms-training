@@ -8,6 +8,8 @@ namespace SyncfusionDemo
     {
         public App()
         {
+            // TODO Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
             InitializeComponent();
 
             MainPage = new MainPage();
