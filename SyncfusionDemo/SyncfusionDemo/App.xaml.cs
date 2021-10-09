@@ -9,7 +9,7 @@ namespace SyncfusionDemo
         public App()
         {
             // TODO Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTE1NTc2QDMxMzkyZTMzMmUzMGx3TC91VENVdlR4Z0Z4VmZpWkFKMzlXbzNkaWIxVG1sTGZRS1YrQm5nSkk9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
             InitializeComponent();
 
             MainPage = new MainPage();
