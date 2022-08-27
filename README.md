@@ -4,11 +4,11 @@ traning for Xamarin.Forms
 # development environment
 
 ```
-Visual Studio Community 2019 for Mac
-Version 8.10.7 (build 17)
+Visual Studio Community 2022 for Mac
+Version 17.3.2 (build 24)
 ```
 ```
-XCode Version 12.5.1
+XCode Version 13.4.1
 ```
 
 # development memo
