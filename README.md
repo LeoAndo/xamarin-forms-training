@@ -1,4 +1,4 @@
-# xamarin-forms-traning
+# xamarin-forms-training
 traning for Xamarin.Forms
 
 # development environment
