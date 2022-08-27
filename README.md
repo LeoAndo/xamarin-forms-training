@@ -8,7 +8,7 @@ Visual Studio Community 2022 for Mac
 Version 17.3.2 (build 24)
 ```
 ```
-XCode Version 13.4.1
+Xcode Version 13.4.1
 ```
 
 # development memo
