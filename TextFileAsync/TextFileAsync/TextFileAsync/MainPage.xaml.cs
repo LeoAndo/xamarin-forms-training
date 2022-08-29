@@ -71,6 +71,7 @@ namespace TextFileAsync
             try
             {
                 fileEditor.Text = await fileHelper.ReadTextAsync((string)args.SelectedItem);
+                // fileEditor.Text = fileHelper.ReadTextAsync((string)args.SelectedItem).Result; // デッドロック！
                 filenameEntry.Text = filename;
             }
             catch (Exception exc)
