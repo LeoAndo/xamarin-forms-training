@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -30,6 +31,7 @@ namespace TaskDelayClock
                                                                     AbsoluteLayout.AutoSize,
                                                                     AbsoluteLayout.AutoSize));
                 await Task.Delay(250);
+                // Thread.Sleep(250);
             }
         }
     }
