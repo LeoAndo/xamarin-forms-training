@@ -14,6 +14,12 @@
                FontSize="Large"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand"/>
+
+        <Button Text="Custom Task1"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="Button_Clicked_1"/>
+
     </StackLayout>
 
 </ContentPage>

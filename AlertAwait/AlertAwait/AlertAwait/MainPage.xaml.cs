@@ -27,6 +27,47 @@ namespace AlertAwait
 
             Console.WriteLine("Button_Clicked OUT");
         }
+
+        async void Button_Clicked_1(System.Object sender, System.EventArgs e)
+        {
+            Console.WriteLine("Button_Clicked_1 IN");
+            await MyMethodAsync();
+            string result = await MyMethodAsync2();
+            Console.WriteLine("result: {0}", result);
+            string result2 = await MyMethodAsync3();
+            Console.WriteLine("result2: {0}", result2);
+            Console.WriteLine("Button_Clicked_1 OUT");
+
+        }
+
+        // void: 戻り値なし
+        private Task MyMethodAsync()
+        {
+            return Task.Run(() =>
+            {
+                Console.WriteLine("MyMethodAsync: ワーカースレッドで実行する処理をここで行う");
+            });
+        }
+        // 戻り値あり
+        private Task<string> MyMethodAsync2()
+        {
+            return Task<string>.Run(() =>
+            {
+                Console.WriteLine("MyMethodAsync2: ワーカースレッドで実行する処理をここで行う");
+                return "Hello, Async task";
+            });
+        }
+
+        // 戻り値あり & 中でawaitを使うパターン
+        private Task<string> MyMethodAsync3()
+        {
+            return Task<string>.Run(async () =>
+            {
+                Console.WriteLine("MyMethodAsync3: ワーカースレッドで実行する処理をここで行う");
+                await Task.Delay(1000);
+                return "Hello, Async task";
+            });
+        }
     }
 }
 
