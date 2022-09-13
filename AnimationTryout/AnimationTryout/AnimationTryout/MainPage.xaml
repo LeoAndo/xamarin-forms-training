@@ -3,13 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnimationTryout.MainPage">
 
-    <Button x:Name="buttonAnimate"
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="buttonAnimate"
             Text="Tap Me!"
             FontSize="Large"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
             Clicked="buttonAnimate_Clicked"
             />
-
+        <Button
+            x:Name="buttonAsyncAnimate"
+            Text="Tap Me!(Async)"
+            Margin="40"
+            FontSize="Medium"
+            Clicked="buttonAsyncAnimate_Clicked" />
+        <Button
+            x:Name="buttonCancelAnimate"
+            Text="Cancel Animation"
+            Margin="40"
+            FontSize="Small"
+            Clicked="buttonCancelAnimate_Clicked"/>
+    </StackLayout>
 </ContentPage>
 
