@@ -35,6 +35,17 @@ namespace AnimationTryout
             ViewExtensions.CancelAnimations(buttonAsyncAnimate);
             Console.WriteLine("OUT buttonCancelAnimate_Clicked!");
         }
+
+        async void buttonCombineAnimate_Clicked(System.Object sender, System.EventArgs e)
+        {
+            buttonCombineAnimate.Rotation = 0;
+            await Task.WhenAny<bool>
+                ( // 引数内のTaskが同時に実行される！
+                buttonCombineAnimate.RotateTo(360, 1000, easing: Easing.BounceOut),
+                buttonCombineAnimate.ScaleTo(5, 3000)
+                );
+            await buttonCombineAnimate.ScaleTo(1, 1000);
+        }
     }
 }
 

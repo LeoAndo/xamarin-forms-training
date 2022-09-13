@@ -21,6 +21,13 @@
             Margin="40"
             FontSize="Small"
             Clicked="buttonCancelAnimate_Clicked"/>
+
+          <Button
+            x:Name="buttonCombineAnimate"
+            Text="Tap Me!(Combine)"
+            Margin="40"
+            FontSize="Small"
+            Clicked="buttonCombineAnimate_Clicked"/>
     </StackLayout>
 </ContentPage>
 
