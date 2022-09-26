@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app="clr-namespace:BehaviourDemo"
+             x:Class="BehaviourDemo.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Style.Behaviors>
+                    <app:NumericValidationBehavior/>
+                </Style.Behaviors>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <StackLayout VerticalOptions="Center">
+        <Entry Placeholder="Enter a number..."/>
+        <Entry Placeholder="Enter a number..."/>
+    </StackLayout>
+
+</ContentPage>
+
